@@ -1,0 +1,30 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="336" border="1"class="table table-striped">
+    <tr class="table table-dark">
+      <th >Section</th >
+      <th >Question</th>
+      <th >Answer</th>
+      <th>Sections</th>
+      <th >Punishment</th>
+      <th >&nbsp;</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+    <td>{{ i.SECTION.sections }}&nbsp;</td>
+      <td>{{ i.question }}&nbsp;</td>
+      <td>{{ i.answer }}&nbsp;</td>
+      <td>{{ i.section }}</td>
+      <td>{{ i.punishment }}&nbsp;</td>
+      <td><a href="/dele/{{ i.id }}"class="btn btn-outline-danger">Delete</a></td>
+    </tr>
+       {% endfor %}
+    <tr>
+      <td colspan="5" scope="row" align="center"><a href="/section_question#about" class="btn btn-warning">ADD+</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

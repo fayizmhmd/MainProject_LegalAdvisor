@@ -1,0 +1,21 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/reply_code">
+  <table width="200" border="1"class="table table-bordered">
+    <tr>
+      <th>Reply</th>
+      <td><label>
+        <textarea name="reply"  class="form-control" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" ><label>
+        <input type="submit" name="Submit" value="send" class="btn btn-warning" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/hearing_details">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Date</th>
+      <td><label>
+        <input type="date" name="textfield2"  required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Time</th>
+      <td><label>
+        <input type="time" name="textfield3" required />
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add hearing date" class="btn btn-outline-success" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/Notification">
+  <table width="585" border="1">
+    <tr>
+      <th width="144" scope="col">Notification</th>
+      <th width="144" scope="col"> Date </th>
+      <th width="161" scope="col">Time</th>
+      <th width="108" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.notification }}</td>
+        <td>{{ i.date }}</td>
+      <td>{{ i.time }}</td>
+
+{#      <td><p><a href="#">edit</a></p>#}
+{#      <p><a href="#">delete</a></p></td>#}
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add new" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

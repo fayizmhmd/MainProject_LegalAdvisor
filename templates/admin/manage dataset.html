@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td>SL.NO</td>
+      <td>QUESTIONS</td>
+      <td>ANSWERS</td>
+        <td></td>
+    </tr>
+       {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.question }}&nbsp;</td>
+      <td>{{ i.answer }}&nbsp;</td>
+        <td><p><a href="dlt_ds/{{ i.id }}" class="btn btn-outline-danger">Delete</a></p></td></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="5" align="center"><a href="/add_dataset#about" class="btn btn-warning">ADD+</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td>CASE TYPE </td>
+      <td>SECTIONS</td>
+      <td>DETAILS</td>
+        <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.case_type }}</td>
+      <td>&nbsp;{{ i.sections }}</td>
+      <td>{{ i.details }}&nbsp;</td>
+            <td>
+      <p><a href="delet/{{ i.id }}"class="btn btn-outline-danger">Delete</a></p></td>
+    </tr>
+      {% endfor %}
+
+     <tr>
+        <td colspan="5" align="center"><a href="/add_new_section#about"class="btn btn-warning"> ADD+</a></td>
+    </tr>
+
+  </table>
+</form>
+</body>
+
+{% endblock %}

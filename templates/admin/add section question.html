@@ -1,0 +1,48 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_sctnqstns">
+  <table width="200" border="1"class="table table-striped">
+       <tr>
+      <th scope="row">Section</th>
+      <td><label>
+        <select name="select">
+            {% for i in val %}<option value="{{ i.id }}">{{ i.sections }}</option>{% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Question</th>
+      <td><label>
+        <textarea  class="form-control" name="textarea" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Answer</th>
+      <td><label>
+        <textarea  class="form-control" name="textarea2" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+
+  <tr>
+      <th scope="row"> Sub-Section</th>
+      <td><label>
+        <textarea  class="form-control" name="textarea5" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Punishment</th>
+      <td><label>
+        <textarea  class="form-control" name="textarea4" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" scope="row"  align="center"><label>
+        <input type="submit" name="Submit" value="ADD+" class="btn btn-warning" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

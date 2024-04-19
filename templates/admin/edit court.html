@@ -1,0 +1,30 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'editcode' %}">
+  <table width="200" border="1"class="table table-striped">
+    <tr>
+      <th scope="row">NAME</th>
+      <td><input type="text" name="name" value="{{ val.court_name }}" class="form-control" required pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">PLACE</th>
+      <td><input type="text" name="Place" value="{{ val.place }}" class="form-control" pattern="[A-Z a-z.]{3,25}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><input type="text" name="Email" value="{{ val.email }}" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE</th>
+      <td><input type="text" name="Phone" value="{{ val.phone }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" scope="row" align="center"><input type="submit" name="button" id="button" value="Update" class="btn btn-warning" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

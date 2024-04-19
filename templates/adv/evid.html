@@ -1,0 +1,27 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'addevid' %}" enctype="multipart/form-data">
+  <table width="270" border="1">
+       <tr>
+      <th scope="row"><div align="left">Evidence</div></th>
+      <td><label>
+        <input type="file" name="file">
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Details</div></th>
+      <td><label>
+        <textarea name="textarea"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Send" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

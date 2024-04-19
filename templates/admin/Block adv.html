@@ -1,0 +1,40 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="Search_Block_advocate">
+  <table width="606" border="1" class="table table-striped">
+    <tr class="table-secondary">
+        <td colspan="2"><input type="text"  name="textfield"   class="form-control " id="validationServer01" placeholder="Name"  /></td>
+        <td colspan="7"><input type="submit" name="Submit" value="Search"  class="btn btn-primary"/>
+        </td>
+    </tr>
+    <tr class="table table-dark" align="center">
+      <td width="31">Sl.no</td>
+      <td width="63"><p>Advocate Name </p></td>
+      <td width="51">Address</td>
+        <td width="38">Phone</td>
+      <td width="105">Qualification</td>
+      <td width="58">Proof</td>
+        <td> </td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.firstname }} {{ i.lastname }} </td>
+      <td>{{ i.address }}</td>
+      <td>&nbsp;{{ i.phone }}</td>
+      <td>&nbsp;{{ i.qualification }}</td>
+      <td>&nbsp;{{ i.proof }}</td>
+      <td width="8" rowspan="1">
+          {% if i.LOGIN.type == "advocate" %}<a href="/blocked/{{ i.LOGIN.id }}"class="btn btn-danger">Block</a>
+          {% elif i.LOGIN.type == "block" %}<a href="/unblocked/{{ i.LOGIN.id }}" class="btn btn-success">Unblock</a>{% endif %}</td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+</body>
+
+{% endblock %}

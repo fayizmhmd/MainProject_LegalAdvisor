@@ -1,0 +1,45 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="248" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td width="61">User name </td>
+      <td width="36">Date</td>
+      <td width="37">Time</td>
+        <td width="45">Case details</td>
+        <td></td>
+                <td></td>
+                <td></td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.USER.firstname }} {{ i.USER.lastname }}</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.time }}&nbsp;</td>
+        <td>{{ i.case_details }}</td>
+      <td>
+          {% if i.status == 'pending' %}<a href="acceptbooking/{{ i.id }}" class="btn btn-outline-success">Accept</a>
+      <a href="rejectbooking/{{ i.id }}" class="btn btn-outline-danger">reject</a>
+             {% elif i.status == 'accept' %}
+                        <a href="Add_hearing_dates/{{i.id}}" class="btn btn-outline-primary">hearing date</a>
+              {% elif i.status == 'given' %}
+          Informed
+          {% else %}
+          Rejected
+          {% endif %}
+
+      </td>
+    <td>{% if i.status != 'pending' %} <a href="ManageNotification/{{i.id}}" class="btn btn-outline-primary">NOTIFICATION</a>
+        {% endif %}
+    </td>
+     <td>{% if i.status != 'pending' %} <a href="ManageEvidence/{{i.id}}" class="btn btn-outline-primary">EVIDENCE</a>
+        {% endif %}
+    </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

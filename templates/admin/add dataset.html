@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="datasetcode">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row" >QUESTION</th>
+      <td><label>
+        <input type="text" name="question"  class="form-control" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">ANSWER</th>
+      <td><label>
+        <textarea name="answer" class="form-control" required pattern="[A-Z a-z.]{3,25}+[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" scope="row" align="center"><label>
+        <input type="submit" name="Submit" value="ADD+" class="btn btn-warning" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

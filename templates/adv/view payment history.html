@@ -1,0 +1,27 @@
+
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td>User Name </td>
+      <td>Amount</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>Type</td>
+    </tr>
+      {%  for i in val %}
+    <tr>
+      <td>{{ i.USER.firstname }} {{ i.USER.lastname }}&nbsp;</td>
+      <td>{{ i.amount }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>&nbsp;{{ i.status }}</td>
+      <td>&nbsp;{{ i.type }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

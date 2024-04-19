@@ -1,0 +1,27 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td>User name </td>
+      <td>Feedback</td>
+      <td>Date</td>
+        <td>Rating</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.USERID.firstname }} {{ i.USERID.lastname }}</td>
+      <td>{{ i.feedback }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.rating }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'addnotif' %}">
+  <table width="270" border="1">
+
+
+    <tr>
+      <th scope="row"><div align="left">Notification</div></th>
+      <td><label>
+        <textarea name="textarea"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Send" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

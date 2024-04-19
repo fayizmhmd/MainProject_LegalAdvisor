@@ -1,0 +1,29 @@
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+<body>
+<form action="/eviden" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="785" border="1">
+    <tr>
+      <th width="218" scope="col">Evidence</th>
+      <th width="161" scope="col">Details</th>
+      <th width="144" scope="col">Date</th>
+      <th width="67" scope="col">&nbsp;</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+        <td><a href="{{ i.evidence.url }}" download=""><u>{{ i.evidence  }}</u></a> </td>
+        <td>{{ i.details }}</td>
+        <td>{{ i.date }}</td>
+    </tr>
+    {% endfor %}
+   <tr>
+      <td colspan="4"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Add new" />
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

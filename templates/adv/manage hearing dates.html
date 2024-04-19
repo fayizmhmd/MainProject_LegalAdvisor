@@ -1,0 +1,28 @@
+
+{% extends 'adv/advocate_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" class="table table-striped">
+    <tr class="table table-dark">
+      <td>Username</td>
+      <td>Case</td>
+      <td>Date</td>
+      <td>Time</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.Case.USER.firstname }}&nbsp;{{ i.Case.USER.lastname }}</td>
+      <td>{{ i.Case.case_details }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>&nbsp;{{ i.time }}</td>
+    </tr>
+      {% endfor %}
+{#    <tr>#}
+{#      <td colspan="3"><a href="/Add_hearing_dates">Add Hearing Date</a></td>#}
+{#    </tr>#}
+  </table>
+</form>
+</body>
+{% endblock %}

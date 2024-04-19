@@ -1,0 +1,47 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="searchapprove_advocate">
+  <table width="484" border="4" class="table table-striped">
+    <tr class="table-secondary">
+        <td colspan="2"><input type="text"  name="textfield"   class="form-control " id="validationServer01" placeholder="Name"  /></td>
+      <td colspan="7"><input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></td>
+    </tr>
+    <tr class="table table-dark" align="center">
+      <td>NAME</td>
+      <td>ADDRESS</td>
+      <td>PHONE</td>
+      <td>EMAIL</td>
+      <td>QUALIFICATION</td>
+        <td>DEPARTMENT</td>
+        <td>EXPERIENCE</td>
+      <td>PROOF</td>
+      <td></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.firstname }} {{ i.lastname }}</td>
+      <td>&nbsp;{{ i.address }}
+          {{ i.place }}
+          {{ i.post }}
+          {{ i.pincode }}</td>
+      <td>{{ i.phone }}</td>
+      <td>{{ i.email }}</td>
+      <td align="center">{{ i.qualification }}</td>
+        <td align="center">{{ i.department }}</td>
+    <td align="center">{{ i.experience }}</td>
+        <td><a href="{{ i.proof.url }}" download>Download</a></td>
+    <td width="8"><p>
+        {% if i.LOGIN.type == "pending" %}<a href="/acceptad/{{ i.LOGIN.id }}"class="btn btn-outline-success">Accept</a></p>
+      <p><a href="/rejectad/{{ i.LOGIN.id }}" class="btn btn-outline-danger">Reject</a>
+      {% elif i.LOGIN.type == "advocate" %}Accepted{% else %}Rejected{% endif %}</p></td>
+
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

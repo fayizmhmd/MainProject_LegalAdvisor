@@ -1,0 +1,100 @@
+{% load static %}
+	<head>
+		<meta charset="utf-8">
+		<title>ADVOCATE REGISTRATION</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'register/regfonts/linearicons/style.css' %}">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'register/regcss/style.css' %}">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner">
+				<img src="{% static 'register/regimages/image-1.png' %}" alt="" class="image-1">
+				<form action="/advocatecode" method="post" enctype="multipart/form-data">
+					<h3>New Account?</h3>
+					<div class="form-holder">
+                <span class="lnr lnr-user"></span>
+                <input type="text" class="form-control" placeholder="Firstname" name="textfield" required>
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-user"></span>
+                <input type="text" class="form-control" placeholder="Last Name" name="textfield2" required>
+            </div>
+            <div class="form-holder">
+                <span></span>
+                Gender:
+                <label>
+                    <input name="radiobutton" type="radio" value="Male" required> Male
+                </label>
+                <label>
+                    <input name="radiobutton" type="radio" value="Female"> Female
+                </label>
+            </div>
+                    <div class="form-holder">
+                <span class="lnr lnr-apartment"></span>
+                <input type="text" class="form-control" placeholder="Address" name="textarea" required>
+            </div>
+
+            <div class="form-holder">
+                <span class="lnr lnr-location"></span>
+                <input type="text" class="form-control" placeholder="Place" name="textfield12" required>
+            </div>
+            <div class="form-holder">
+                <span class="fas fa-map-marker"></span>
+                <input type="text" class="form-control" placeholder="Post" name="textfield13" required>
+            </div>
+            <div class="form-holder">
+                <span class=""></span>
+                <input type="text" class="form-control" placeholder="Pin" name="textfield14" required pattern="[0-9]{6}">
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-phone-handset"></span>
+                <input type="text" class="form-control" placeholder="Phone" name="textfield6" required pattern="[6789][0-9]{9}">
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-envelope"></span>
+                <input type="email" class="form-control" placeholder="Email" name="textfield7" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            </div>
+
+               <div class="form-holder">
+                <span class="lnr lnr-graduation-hat"></span>
+                <input type="text" class="form-control" placeholder="Qualification" name="textfield8" required >
+            </div>
+
+                    <div class="form-holder">
+                <span class="lnr lnr-book"></span>
+                <input type="text" class="form-control" placeholder="Department" name="textfield9" required >
+            </div>
+                     <div class="form-holder">
+                <span class="lnr lnr-history"></span>
+                <input type="text" class="form-control" placeholder="Experience" name="textfield15" required >
+            </div>
+                    <div class="form-holder">
+                <span class="lnr lnr-history"></span>
+                <input type="text" class="form-control" placeholder="Status" name="textfield16" required >
+            </div>
+            <div class="form-holder">
+                <span class="fas fa-camera"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="file" name="file" required>
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-user"></span>
+                <input type="text" class="form-control" placeholder="Username" name="textfield10" required pattern="[A-Za-z0-9.]{3,10}">
+            </div>
+            <div class="form-holder">
+                <span class="lnr lnr-lock"></span>
+                <input type="password" class="form-control" placeholder="Password" name="textfield11" required>
+            </div>
+					<button>
+						<span>Register</span>
+					</button>
+				</form>
+				<img src="{% static 'register/regimages/image-2.png' %}" alt="" class="image-2">
+			</div>
+		</div>
+		<script src="{% static 'register/regjs/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'register/regjs/main.js' %}"></script>
+	</body>
+</html>
